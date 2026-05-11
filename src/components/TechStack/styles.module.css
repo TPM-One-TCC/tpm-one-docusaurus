@@ -1,0 +1,35 @@
+
+.techSection {
+  background: var(--ifm-background-surface-color, #f7f8fa);
+  padding: 4rem 2rem;
+}
+
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.techChip {
+  display: flex;
+  gap: 8px;
+  background: var(--ifm-card-background-color, #fff);
+  border: 1px solid var(--ifm-color-emphasis-200, #e0e0e0);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.techChip:hover {
+  border-color: var(--tpm-blue-dark);
+  transform: translateY(-2px);
+}
+
+.techIcon {
+  display: flex;
+  font-size: 1.2rem;
+}
