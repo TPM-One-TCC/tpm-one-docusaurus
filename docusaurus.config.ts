@@ -4,7 +4,7 @@ import type { Config } from '@docusaurus/types';
 const config: Config = {
   title: 'TPM One',
   tagline: 'Gerenciamento de Máquinas e Ordens de Manutenção',
-  favicon: 'static/img/tpmone-logo.svg',
+  favicon: '/img/tpmone-logo.svg',
 
   url: 'https://tpmone.docs.bosch.com',
   baseUrl: '/',
@@ -26,7 +26,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/ETS-Bosch/tpmone-docs/tree/main/',
         },
         blog: false,
         theme: {
@@ -60,7 +59,19 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        { title: "Links de Referência", items: [{ label: "Documentação Técnica", href: "/" }, { label: "Apresentação", href: "/" }] },
+        {
+          title: 'Links de Referência',
+          items: [
+            {
+              label: 'Documentação Técnica',
+              href: '/docs/intro',
+            },
+            {
+              label: 'Apresentação',
+              href: '/',
+            },
+          ],
+        },
       ],
       copyright: `© ${new Date().getFullYear()} TPM One 1.0`,
     },

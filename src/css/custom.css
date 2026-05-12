@@ -89,3 +89,52 @@
 .clean-btn.backToTop_node_modules-\@docusaurus-theme-classic-lib-theme-BackToTopButton-styles-module {
   background-color: var(--ifm-color-primary);
 }
+
+.docAccess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-left: 4px solid var(--tpm-blue-middle);
+  border-radius: 8px;
+  background: var(--ifm-background-surface-color);
+}
+
+.docAccess strong,
+.docAccess span {
+  display: block;
+}
+
+.docAccess strong {
+  color: var(--ifm-heading-color);
+  font-size: 1rem;
+}
+
+.docAccess span {
+  margin-top: 0.2rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.92rem;
+}
+
+.docAccess a {
+  flex: 0 0 auto;
+  color: var(--tpm-blue-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.docAccess a:hover {
+  color: var(--tpm-blue-middle);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .docAccess {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
