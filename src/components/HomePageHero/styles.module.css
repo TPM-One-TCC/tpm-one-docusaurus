@@ -54,7 +54,9 @@
   transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
-.btnPrimary:hover {
-  transform: translateY(-3px);
-  color: var(--tpm-blue-middle);
+@media (hover: hover) and (pointer: fine) {
+  .btnPrimary:hover {
+    transform: translateY(-3px);
+    color: var(--tpm-blue-middle);
+  }
 }
