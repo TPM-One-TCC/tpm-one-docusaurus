@@ -5,7 +5,8 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  // Ajustado para aceitar componentes SVG ou caminhos de imagem (string)
+  Svg: React.ComponentType<React.ComponentProps<'svg'>> | string;
   description: ReactNode;
   highlight?: boolean;
 };
@@ -16,7 +17,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/objective-icon.svg').default,
     description: (
       <>
-        TPM One foi desenvolvido com a área de <strong>TPM (Manutenção Preventiva Total)</strong>,
+        TPM One foi desenvolvido conjuntamente com a área de <strong>TPM (Manutenção Preventiva Total)</strong>,
         com o objetivo de criar uma solução concreta para gerenciamento de máquinas e ordens
         de manutenção dentro da planta de Campinas.
       </>
@@ -24,11 +25,12 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Conexão com o SAP',
-    Svg: require('@site/static/img/database-icon.svg').default,
+    // O PNG agora será tratado como string pelo componente Feature
+    Svg: require('@site/static/img/sap-icon.png').default,
     description: (
       <>
-        Integração com a base de dados do SAP por meio do RedLake, centralizando informações
-        importantes para a rotina de manutenção.
+        Nosso sistema utiliza uma conexão direta com o SAP através de queries SQL ORACLE, utilizado o DataLake Interno
+        da <strong> Bosch </strong> para a conexão entre nosso sistema e os dados visualizados nas transações do SAP.
       </>
     ),
   },
@@ -38,8 +40,9 @@ const FeatureList: FeatureItem[] = [
     highlight: true,
     description: (
       <>
-        Visualização do mapa 3D para localizar máquinas, acompanhar áreas da planta e facilitar
-        a leitura operacional do ambiente.
+        Nossa visualização 3D dinâmica permite o rastreamento da hierarquia de produção da planta.
+        Localize prédios instantaneamente e faça o drill-down até o nível da máquina para
+        visualizar ordens de manutenção com total clareza visual.
       </>
     ),
   },
@@ -48,18 +51,32 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/ai-decision-icon.svg').default,
     description: (
       <>
-        Criação de informações inteligentes para apoiar análises, identificar prioridades e
-        melhorar a tomada de decisão.
+        Através do modelo GPT 5.4, transformamos dados separados em inteligência estratégica,
+        permitindo a priorização automatizada de ações críticas e uma tomada de decisão.
       </>
     ),
   },
 ];
 
 function Feature({ title, Svg, description, highlight }: FeatureItem) {
+  // Verifica se Svg é uma string (caminho de imagem) ou um componente
+  const isImageString = typeof Svg === 'string';
+
   return (
-    <div>
+    <div className={styles.featureItem}>
       <div className={styles.iconFrame}>
-        <Svg className={clsx(styles.featureSvg, highlight && styles.mapSvg)} role="img" />
+        {isImageString ? (
+          <img
+            src={Svg}
+            className={clsx(styles.featureSvg, highlight && styles.mapSvg)}
+            alt={title}
+          />
+        ) : (
+          <Svg
+            className={clsx(styles.featureSvg, highlight && styles.mapSvg)}
+            role="img"
+          />
+        )}
         {highlight && <span className={styles.mapBadge}>3D</span>}
       </div>
 
