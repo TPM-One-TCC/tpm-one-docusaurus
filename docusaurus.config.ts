@@ -1,7 +1,7 @@
 import type { Config } from '@docusaurus/types';
 
 const config: Config = {
-  title: 'TPM One - Documentação',
+  title: 'TPM One Documentação',
   tagline: 'Gerenciamento de Máquinas e Ordens de Manutenção',
   favicon: '/img/tpmone-logo.svg',
 
@@ -71,7 +71,7 @@ const config: Config = {
             },
             {
               label: 'Apresentação',
-              href: '/',
+              href: 'https://canva.link/mkuaao3hmvd1s9k',
             },
           ],
         },

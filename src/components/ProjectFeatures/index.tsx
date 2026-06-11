@@ -17,20 +17,18 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/objective-icon.svg').default,
     description: (
       <>
-        TPM One foi desenvolvido conjuntamente com a área de <strong>TPM (Manutenção Preventiva Total)</strong>,
-        com o objetivo de criar uma solução concreta para gerenciamento de máquinas e ordens
-        de manutenção dentro da planta de Campinas.
+        TPM One foi desenvolvido conjuntamente com as áreas de <strong>TEF7</strong> e <strong>TPM (Manutenção Preventiva Total)</strong>,
+        com o objetivo de criar uma solução concreta para gerenciamento de máquinas e ordens de manutenção dentro da planta de Campinas.
       </>
     ),
   },
   {
     title: 'Conexão com o SAP',
-    // O PNG agora será tratado como string pelo componente Feature
     Svg: require('@site/static/img/sap-icon.png').default,
     description: (
       <>
-        Nosso sistema utiliza uma conexão direta com o SAP através de queries SQL ORACLE, utilizado o DataLake Interno
-        da <strong> Bosch </strong> para a conexão entre nosso sistema e os dados visualizados nas transações do SAP.
+        Nosso sistema conecta-se diretamente ao SAP via queries <strong>Oracle SQL</strong>, utilizando o DataLake interno 
+        da <strong>Bosch</strong> para integrar a aplicação aos dados visualizados nas transações do SAP.
       </>
     ),
   },
