@@ -67,3 +67,59 @@
   color: var(--ifm-color-emphasis-600);
   font-weight: 500;
 }
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.socialLink {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 50%;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-800);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.socialLink svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: block;
+}
+
+.githubLink {
+  color: #181616;
+}
+
+.linkedinLink {
+  color: #0076b2;
+}
+
+[data-theme="dark"] .githubLink {
+  color: #f5f5f5;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .socialLink:not(.socialLinkPending):hover {
+    transform: translateY(-2px);
+    border-color: currentColor;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.socialLinkPending {
+  opacity: 0.5;
+  cursor: default;
+}

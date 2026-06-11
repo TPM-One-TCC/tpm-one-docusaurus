@@ -1,8 +1,7 @@
-import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 
 const config: Config = {
-  title: 'TPM One',
+  title: 'TPM One - Documentação',
   tagline: 'Gerenciamento de Máquinas e Ordens de Manutenção',
   favicon: '/img/tpmone-logo.svg',
 
