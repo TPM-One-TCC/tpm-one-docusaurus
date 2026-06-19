@@ -30,6 +30,10 @@
   object-fit: contain;
 }
 
+.darkInvertSvg {
+  transition: color 0.2s ease;
+}
+
 .mapSvg {
   width: 154px;
   height: 122px;
@@ -65,6 +69,19 @@
   font-size: 15px;
   line-height: 1.55;
   text-align: center;
+}
+
+:global([data-theme='dark']) .featureContent h3,
+:global([data-theme='dark']) .featureDescription {
+  color: #ffffff;
+}
+
+:global([data-theme='dark']) .darkInvertSvg {
+  color: #ffffff;
+}
+
+:global([data-theme='dark']) .darkInvertSvg path {
+  fill: currentColor;
 }
 
 @media (max-width: 1200px) {

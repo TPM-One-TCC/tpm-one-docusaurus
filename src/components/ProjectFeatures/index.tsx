@@ -9,6 +9,7 @@ type FeatureItem = {
   Svg: React.ComponentType<React.ComponentProps<'svg'>> | string;
   description: ReactNode;
   highlight?: boolean;
+  darkInvert?: boolean;
 };
 
 const FeatureList: FeatureItem[] = [
@@ -47,16 +48,17 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Decisão com IA',
     Svg: require('@site/static/img/ai-decision-icon.svg').default,
+    darkInvert: true,
     description: (
       <>
-        Através do modelo GPT 5.4, transformamos dados separados em inteligência estratégica,
+        Através do modelo GPT 5.4mini, transformamos dados separados em inteligência estratégica,
         permitindo a priorização automatizada de ações críticas e uma tomada de decisão.
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description, highlight }: FeatureItem) {
+function Feature({ title, Svg, description, highlight, darkInvert }: FeatureItem) {
   // Verifica se Svg é uma string (caminho de imagem) ou um componente
   const isImageString = typeof Svg === 'string';
 
@@ -66,12 +68,20 @@ function Feature({ title, Svg, description, highlight }: FeatureItem) {
         {isImageString ? (
           <img
             src={Svg}
-            className={clsx(styles.featureSvg, highlight && styles.mapSvg)}
+            className={clsx(
+              styles.featureSvg,
+              highlight && styles.mapSvg,
+              darkInvert && styles.darkInvertSvg,
+            )}
             alt={title}
           />
         ) : (
           <Svg
-            className={clsx(styles.featureSvg, highlight && styles.mapSvg)}
+            className={clsx(
+              styles.featureSvg,
+              highlight && styles.mapSvg,
+              darkInvert && styles.darkInvertSvg,
+            )}
             role="img"
           />
         )}

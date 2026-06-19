@@ -53,7 +53,7 @@ export default function TeamSection(): React.ReactElement {
       name: "Pedro Augusto Carreteiro",
       role: "Back-End / Banco de Dados",
       image: "/img/group/pedro.jpg",
-      githubUrl: "https://github.com/PedroCarreteiro/PedroCarreteiro",
+      githubUrl: "https://github.com/PedroCarreteiro",
       linkedinUrl: "https://www.linkedin.com/in/pedro-carreteiro-447917284/",
     },
     {
